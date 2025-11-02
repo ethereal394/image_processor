@@ -7,17 +7,17 @@ void Compress(std::vector<std::vector<RGB>>& result, double height_coefficient, 
               Image& image) noexcept {
     for (int64_t i = 0; i < static_cast<int64_t>(result.size()); ++i) {
         for (int64_t j = 0; j < static_cast<int64_t>(result[0].size()); ++j) {
-            auto& x = result[i][j];
+            auto& pixel = result[i][j];
             int64_t count = 0;
             for (int64_t k = ceil(static_cast<double>(i) * height_coefficient);
                  k < static_cast<int64_t>(ceil(static_cast<double>(i + 1) * height_coefficient)); ++k) {
                 for (int64_t p = ceil(static_cast<double>(j) * width_coefficient);
                      p < static_cast<int64_t>(ceil(static_cast<double>(j + 1) * width_coefficient)); ++p) {
-                    x += image.GetPixel(k, p);
+                    pixel += image.GetPixel(k, p);
                     ++count;
                 }
             }
-            x /= static_cast<double>(count);
+            pixel /= static_cast<double>(count);
         }
     }
     image.SetPixels(std::move(result));

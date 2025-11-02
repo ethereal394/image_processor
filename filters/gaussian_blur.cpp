@@ -32,12 +32,12 @@ void GaussianBlur::ApplyGaussianBlur(Image& image) const noexcept {
     }
     for (int64_t i = 0; i < static_cast<int64_t>(image.GetHeight()); ++i) {
         for (int64_t j = 0; j < static_cast<int64_t>(image.GetWidth()); ++j) {
-            RGB x;
+            RGB pixel;
             for (int64_t p = -border; p <= border; ++p) {
                 double coefficient = exp(static_cast<double>(-Square(p)) / (2 * Square(sigma_)));
-                x += vert_sum[i][j + border - p] * coefficient;
+                pixel += vert_sum[i][j + border - p] * coefficient;
             }
-            image.SetPixel(i, j, x);
+            image.SetPixel(i, j, pixel);
         }
     }
 }
