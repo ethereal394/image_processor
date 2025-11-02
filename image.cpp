@@ -10,6 +10,10 @@ RGB::operator std::array<double, 3>() const {
     return {R, G, B};
 }
 
+RGB::operator std::array<double*, 3>() {
+    return {&R, &G, &B};
+}
+
 RGB& RGB::operator+=(RGB x) {
     R += x.R;
     G += x.G;

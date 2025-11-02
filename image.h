@@ -14,6 +14,8 @@ public:
 
     explicit operator std::array<double, 3>() const;
 
+    explicit operator std::array<double*, 3>();
+
     RGB& operator+=(RGB);
 
     RGB& operator*=(double);
