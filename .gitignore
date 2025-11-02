@@ -1,0 +1,7 @@
+build
+build_clion
+test_script
+.clang-format
+.clang-tidy
+.idea
+.DS_Store
