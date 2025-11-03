@@ -1,7 +1,5 @@
 #include "sharpening.h"
 
-#include <vector>
-
 const int CENTRAL_COEFFICIENT = 5;
 const int SIDE_COEFFICIENT = -1;
 

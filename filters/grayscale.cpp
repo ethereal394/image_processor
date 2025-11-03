@@ -1,7 +1,5 @@
 #include "grayscale.h"
 
-#include <vector>
-
 const double R_COEFFICIENT = 0.299;
 const double G_COEFFICIENT = 0.587;
 const double B_COEFFICIENT = 0.114;

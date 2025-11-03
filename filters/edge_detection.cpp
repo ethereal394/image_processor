@@ -1,9 +1,5 @@
 #include "edge_detection.h"
 
-#include <vector>
-
-#include "../factories/grayscale_factory.h"
-
 const int CENTRAL_COEFFICIENT = 4;
 const int SIDE_COEFFICIENT = -1;
 
