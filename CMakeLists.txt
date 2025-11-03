@@ -13,6 +13,7 @@ add_executable(
         controller.cpp
         image.cpp
         io.cpp
+        filters/anime.cpp
         filters/base_filters.cpp
         filters/crop.cpp
         filters/grayscale.cpp
@@ -21,6 +22,7 @@ add_executable(
         filters/edge_detection.cpp
         filters/compress.cpp
         filters/gaussian_blur.cpp
+        factories/anime_factory.cpp
         factories/base_factory.cpp
         factories/crop_factory.cpp
         factories/grayscale_factory.cpp

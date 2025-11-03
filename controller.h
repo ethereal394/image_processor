@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_map>
 
+#include "factories/anime_factory.h"
 #include "factories/base_factory.h"
 #include "factories/compress_factory.h"
 #include "factories/crop_factory.h"
@@ -22,6 +23,7 @@ const std::unordered_map<std::string, std::unique_ptr<BaseFactory> > FACTORIES =
     temp.emplace("edge", std::make_unique<EdgeDetectionFactory>());
     temp.emplace("compress", std::make_unique<CompressFactory>());
     temp.emplace("blur", std::make_unique<GaussianBlurFactory>());
+    temp.emplace("anime", std::make_unique<AnimeFactory>());
     return temp;
 }();
 
