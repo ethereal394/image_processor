@@ -22,6 +22,7 @@ add_executable(
         filters/edge_detection.cpp
         filters/compress.cpp
         filters/gaussian_blur.cpp
+        filters/rotate.cpp
         factories/anime_factory.cpp
         factories/base_factory.cpp
         factories/crop_factory.cpp
@@ -31,4 +32,5 @@ add_executable(
         factories/edge_detection_factory.cpp
         factories/compress_factory.cpp
         factories/gaussian_blur_factory.cpp
+        factories/rotate_factory.cpp
 )

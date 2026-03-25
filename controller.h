@@ -12,6 +12,7 @@
 #include "factories/grayscale_factory.h"
 #include "factories/negative_factory.h"
 #include "factories/sharpening_factory.h"
+#include "factories/rotate_factory.h"
 #include "parser.h"
 
 const std::unordered_map<std::string, std::unique_ptr<BaseFactory> > FACTORIES = []() {
@@ -24,7 +25,11 @@ const std::unordered_map<std::string, std::unique_ptr<BaseFactory> > FACTORIES =
     temp.emplace("compress", std::make_unique<CompressFactory>());
     temp.emplace("blur", std::make_unique<GaussianBlurFactory>());
     temp.emplace("anime", std::make_unique<AnimeFactory>());
+    temp.emplace("rotate", std::make_unique<RotateFactory>());
     return temp;
 }();
 
-void ApplyFilters(const ParserResults &, Image &);
+std::vector<std::unique_ptr<BaseFilter>> CreateFilters(const ParserResults&);
+
+void ApplyFilters(Image&, const std::vector<std::unique_ptr<BaseFilter>>&);
+
