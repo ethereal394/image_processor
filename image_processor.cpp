@@ -41,8 +41,10 @@ int main(int argc, char** argv) {
         image = Image(ReadImage(parser_info.input_file));
     } catch (ImageProcessorException& exc) {
         std::cout << exc.what() << std::endl;
+        return 0;
     } catch (std::exception& exc) {
         std::cout << "unexpected exception: " << exc.what() << std::endl;
+        return 0;
     }
     ApplyFilters(image, filters);
     try {
